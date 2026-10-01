@@ -266,8 +266,14 @@ import CoreServices
         let  url = myUrl.addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed)!;
         var itemUrl: URL? = Foundation.URL(string: url);
 
+        // myUrl может быть уже percent-encoded (например, documentsURL.absoluteString с кириллицей в имени),
+        // тогда повторное кодирование ломает путь (% -> %25) — пробуем исходную строку
+        if !FileManager.default.fileExists(atPath: itemUrl!.path), let rawUrl = Foundation.URL(string: myUrl) {
+            itemUrl = rawUrl;
+        }
+
         if FileManager.default.fileExists(atPath: itemUrl!.path) {
-            
+
             if(itemUrl?.scheme == nil){
                 itemUrl = Foundation.URL(string: "file://\(url)");
             }
