@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-preview-any-file" version="0.2.9">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-preview-any-file" version="0.2.10">
     <name>Preview Any File</name>
     <description>Cordova plugin to preview any file from any where in native mode</description>
     <license>MIT</license>
@@ -14,13 +14,10 @@
             </feature>
         </config-file>
         <source-file src="src/ios/PreviewAnyFile.swift" />
-        <dependency id="cordova-plugin-add-swift-support" version="*" />
         <framework src="CoreServices.framework" />
     </platform>
 
     <platform name="android">
-        <dependency id="cordova-plugin-androidx" version="*" />
-        <dependency id="cordova-plugin-androidx-adapter" version="*" />
         <config-file target="config.xml" parent="/*">
             <platform name="android">
                 <preference name="AndroidXEnabled" value="true"/>

@@ -28,7 +28,7 @@ import CoreServices
                             status: CDVCommandStatus_OK,
                             messageAs: "SUCCESS"
                         );
-                        pluginResult?.keepCallback = true;
+                        pluginResult.keepCallback = true;
                         self.commandDelegate!.send(
                             pluginResult,
                             callbackId: _command.callbackId
@@ -49,7 +49,7 @@ import CoreServices
             }else{
                 pluginResult = CDVPluginResult(
                     status: CDVCommandStatus_ERROR,
-                    messageAs: callback?.localizedDescription
+                    messageAs: callback?.localizedDescription ?? "FAILED"
                 );
                 self.commandDelegate!.send(
                     pluginResult,
@@ -97,7 +97,7 @@ import CoreServices
                             status: CDVCommandStatus_OK,
                             messageAs: "SUCCESS"
                         );
-                        pluginResult?.keepCallback = true;
+                        pluginResult.keepCallback = true;
                         self.commandDelegate!.send(
                             pluginResult,
                             callbackId: _command.callbackId
@@ -118,7 +118,7 @@ import CoreServices
             }else{
                 pluginResult = CDVPluginResult(
                     status: CDVCommandStatus_ERROR,
-                    messageAs: callback?.localizedDescription
+                    messageAs: callback?.localizedDescription ?? "FAILED"
                 );
                 self.commandDelegate!.send(
                     pluginResult,
@@ -229,7 +229,7 @@ import CoreServices
                             status: CDVCommandStatus_OK,
                             messageAs: "SUCCESS"
                         );
-                        pluginResult?.keepCallback = true;
+                        pluginResult.keepCallback = true;
                         self.commandDelegate!.send(
                             pluginResult,
                             callbackId: _command.callbackId
@@ -250,7 +250,7 @@ import CoreServices
             }else{
                 pluginResult = CDVPluginResult(
                     status: CDVCommandStatus_ERROR,
-                    messageAs: callback?.localizedDescription
+                    messageAs: callback?.localizedDescription ?? "FAILED"
                 );
                 self.commandDelegate!.send(
                     pluginResult,
